@@ -1,0 +1,73 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.p-l {
+    float: left !important;
+}
+
+.p-r {
+    float: right !important;
+}
+
+i,
+u,
+s,
+span {
+    display: inline-block;
+}
+
+.el-table th.is-leaf {
+    background-color: #F1F1F1;
+}
+
+.el-table th.is-leaf>div {
+    color: #343434;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.el-table th.el-table-column--selection>div.cell {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+/* 圆点 */
+u.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.pagination {
+    text-align: right;
+    margin-top: 16px;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+/* Popconfirm 气泡确认框 间距 */
+.el-popconfirm__main {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+
+/* 日期范围选择器 */
+#app .el-date-editor .el-range-separator {
+    width: 10%;
+}
+
+/* 解决打包后悬浮样式 */
+body>.el-popover.el-popper{
+  width: auto !important;
+}
