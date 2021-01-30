@@ -44,9 +44,7 @@ module.exports = {
 
     proxyTable: {
       '/api': {
-        // target: 'http://172.16.115.60:8241',
-        // target: 'http://172.16.115.131:8241', // 文
-        target: 'http://172.16.116.235:8241', // 毛
+        target: 'http://81.70.5.172:8331/tumor', // 服务
         secure: false, // 如果是https接口，需要配置这个参数
         changeOrigin: true, //是否跨域
         pathRewrite: {
