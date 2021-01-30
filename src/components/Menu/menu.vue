@@ -4,13 +4,13 @@
       <el-menu :router="true" :default-active="defaultActive" @open="handleOpen" @close="handleClose" :collapse="isCollapse"
         class="el-menu-vertical">
         <div v-for="(item,index) in menuListIcon" :key="index">
-          <!-- 无子菜单 -->
-          <el-menu-item v-if="item.childrens && item.childrens.length == 0" :route="{path: item.path}" :index="item.path">
+          <!-- 无子菜单 --> 
+          <el-menu-item v-if="!item.childrens" :route="{path: item.path}" :index="item.path">
             <i :class="item.icon"></i>
             <span slot="title">{{item.name}}</span>
           </el-menu-item>
           <!-- 有子菜单 -->
-          <el-submenu :index="item.path">
+          <el-submenu v-else :index="item.path">
             <template slot="title">
               <i :class="item.icon"></i>
               <span>{{item.name}}</span>
@@ -36,94 +36,88 @@
             path: '/home/index',
           },
           {
-            name: '门户管理',
+            name: '肺癌筛查中心',
             icon: 'iconfont icon-menhuwangzhan',
-            path: '/portal/index',
+            path: '/screening',
+            childrens: [{
+              name: '数据模型指标设置',
+              path: '/dataModel/index'
+            }, {
+              name: '任务管理',
+              path: '/taskManagement/index'
+            }, {
+              name: '数据查询',
+              path: '/dataQuery/index'
+            }, {
+              name: '筛查结构复审',
+              path: '/screeningReview/index'
+            }, {
+              name: '统计分析',
+              path: '/statisticalAnalysis/index'
+            }, {
+              name: '系统管理',
+              path: '/systemManagement/index'
+            }],
           },
           {
-            name: '项目管理',
+            name: '家庭医生',
             icon: 'iconfont icon-huabanbeifen',
-            path: "/projectManagement",
+            path: "/familyDoctor",
             childrens: [{
-              name: '纵向项目管理',
-              path: '/projectVertical/index'
+              name: '高危人群数据查询',
+              path: '/highDataQuery/index'
             }, {
-              name: '横向项目管理',
-              path: '/projectHorizontal/index'
+              name: '制定随访计划管理',
+              path: '/planningManagement/index'
             }, {
-              name: '项目评审',
-              path: '/projectEvaluate/index'
+              name: '随访过程跟踪',
+              path: '/processTracking/index'
+            }, {
+              name: '随访计划提醒',
+              path: '/planReminder/index'
+            }, {
+              name: '随访执行统计',
+              path: '/executiveStatistics/index'
             }]
           },
           {
-            name: '科研平台管理',
+            name: '监管机构',
             icon: 'iconfont icon-jiaoyukeyan',
-            path: '/platformManagement/index',
-          },
-          {
-            name: '学科建设',
-            icon: 'iconfont icon-xuekeguanli',
-            path: '/course/index',
-          },
-          {
-            name: '科研成果管理',
-            icon: 'iconfont icon-chengguo',
-            path: "/resultsManagement",
+            path: '/regulators',
             childrens: [{
-              name: '论文',
-              path: '/resultsManagement/thesis/index'
+              name: '肺癌高危人群发病监测',
+              path: '/diseaseSurveillance/index'
             }, {
-              name: '科技成果转化',
-              path: '/resultsManagement/technologyAchievements/index',
+              name: '肺癌因素监测',
+              path: '/factorMonitoring/index'
             }, {
-              name: '技术推广',
-              path: '/resultsManagement/diffusion/index'
+              name: '趋势分析统计',
+              path: '/trendStatistics/index'
             }, {
-              name: '专利成果',
-              path: '/resultsManagement/patent/index'
+              name: '随访指标制定',
+              path: '/indicatorDevelopment/index'
             }, {
-              name: '计算机软件著作',
-              path: '/resultsManagement/computerSoftwareWritings/index',
+              name: '随访过程监控',
+              path: '/processMonitoring/index'
             }, {
-              name: '著作',
-              path: '/resultsManagement/writings/index'
+              name: '随访权限管理',
+              path: '/authorityManagement/index'
             }, {
-              name: '标准',
-              path: '/resultsManagement/standard/index'
-            }, {
-              name: '指南',
-              path: '/resultsManagement/guide/index'
-            }, {
-              name: '共识',
-              path: '/resultsManagement/consensus/index'
-            }, {
-              name: '会议相关',
-              path: '/resultsManagement/meeting/index'
-            }, {
-              name: '获奖情况',
-              path: '/resultsManagement/medicalAchievements/index'
-            }, {
-              name: '学会/协会任职',
-              path: '/resultsManagement/appointment/index',
-            }, {
-              name: '期刊杂志任职',
-              path: '/resultsManagement/journalAppointment/index'
+              name: '辅助决策',
+              path: '/assistantDecision/index'
             }]
           },
           {
-            name: '绩效管理',
-            icon: 'iconfont icon-jixiaokaohe',
-            path: '/department/index',
-          },
-          {
-            name: '绩效管理',
-            icon: 'iconfont icon-jixiaokaohe',
-            path: '/performance/index',
-          },
-          {
-            name: '人员管理',
-            icon: 'iconfont icon-xingzhuang9',
-            path: '/user/index',
+            name: '系统管理',
+            icon: 'iconfont icon-xuekeguanli',
+            path: '/systemManagement',
+            childrens: [{
+              name: '用户管理',
+              path: '/userManagement/index'
+            }, {
+              name: '操作日志查询',
+              path: '/logQuery/index'
+            }]
           },
         ]
       };
