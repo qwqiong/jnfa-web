@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from 'axios';//吃
+
 import {
   Message
 } from 'element-ui'
