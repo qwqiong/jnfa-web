@@ -11,11 +11,11 @@ import request from './axios'
  * @param {String} subject  主题
  * @param {String} minAge  
  * @param {String} maxAge 
- * @param {String} exposeHis 
- * @param {String} manageOrg 
- * @param {String} pastMaliGnant
- * @param {String} smoke
- * @param {String} passiveSmoking 
+ * @param {String} exposeHis//危险因素 
+ * @param {String} manageOrg //属于地区
+ * @param {String} pastMaliGnant//是否有恶性肿瘤病史
+ * @param {String} smoke//是否抽烟
+ * @param {String} passiveSmoking //是否戒过烟
  * 
  * @method
  * 

@@ -28,11 +28,10 @@
       </el-header>
       <el-container>
         <el-aside width="auto">
-          <Menu />
+          <menu-custom />
         </el-aside>
         <el-main class="main">
           <PageTit v-if="pageName != 'main'" />
-
           <div
             class="main-content"
             :style="mainContentStyle"
@@ -49,13 +48,12 @@
 
 <script>
 import PageTit from '@/components/PageTit/pageTit.vue' // nav 导航模板
-import Menu from '@/components/Menu/menu.vue' // menu 菜单模板
 
 export default {
   name: 'Home',
   components: {
     PageTit, // 导航模板
-    Menu // 菜单模板
+
   },
   data() {
     return {
@@ -69,6 +67,7 @@ export default {
   watch: {
     $route: {
       handler(n, o) {
+        console.log('标识pageNmae->>>>', n, this.pageName);
         this.pageName = n.name;
         if (this.pageName != 'main') {
           this.mainContentStyle.height = 'calc(100vh - 56px - 34px - 22px)';

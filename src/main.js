@@ -20,11 +20,15 @@ import ElementUI from 'element-ui'
 
 import router from './router'
 
+import Component from './components' // 自定义组件
+
 Vue.config.productionTip = false;
 
 Vue.prototype.$echarts = Echarts;
 Vue.prototype.userInfo = {}
 Vue.use(ElementUI);
+
+Vue.use(Component) // 全局注册自定义组件
 
 Vue.component(CollapseTransition.name, CollapseTransition);
 
@@ -46,9 +50,6 @@ Vue.component(CollapseTransition.name, CollapseTransition);
 //          *
 //          * */
 //         Vue.prototype.userInfo = res.dataObject // 用户信息
-
-
-
 //     }
 // })
 // .catch(err => {
@@ -58,15 +59,15 @@ Vue.component(CollapseTransition.name, CollapseTransition);
 /* eslint-disable no-new */
 
 Vue.prototype.userInfo = {
-    userRole: "项目管理员", 
-    userName: "张三",
+	userRole: "项目管理员",
+	userName: "张三",
 } // 用户信息
 
 new Vue({
-		    el: '#app',
-		    router,
-		    components: {
-		        App,
-		    },
-		    template: '<App/>'
-		})
+	el: '#app',
+	router,
+	components: {
+		App,
+	},
+	template: '<App/>'
+})
