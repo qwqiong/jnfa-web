@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/views/Home/home'
+import Login from '@/views/Login/login'
 
 Vue.use(Router)
 
@@ -8,14 +9,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Home,
-      redirect: '/home/index',
+      redirect: '/login',
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
     },
     {
       path: '/home',
       name: 'home',
       component: Home,
-      redirect: '/home/index',
       children: [{
         path: '/home/index',
         component: () => import('@/views/Main/main'),
@@ -39,7 +43,7 @@ export default new Router({
           title: '数据模型指标设置',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/taskManagement/index',
         component: () => import('@/views/Screening/taskManagement/Index/index'),
         name: 'taskManagement',
@@ -47,7 +51,7 @@ export default new Router({
           title: '任务管理',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/dataQuery/index',
         component: () => import('@/views/Screening/dataQuery/Index/index'),
         name: 'dataQuery',
@@ -55,7 +59,7 @@ export default new Router({
           title: '数据查询',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/screeningReview/index',
         component: () => import('@/views/Screening/screeningReview/Index/index'),
         name: 'screeningReview',
@@ -63,7 +67,7 @@ export default new Router({
           title: '筛查结构复审',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/statisticalAnalysis/index',
         component: () => import('@/views/Screening/statisticalAnalysis/Index/index'),
         name: 'statisticalAnalysis',
@@ -71,7 +75,7 @@ export default new Router({
           title: '统计分析',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/systemManagement/index',
         component: () => import('@/views/Screening/systemManagement/Index/index'),
         name: 'systemManagement',
@@ -94,7 +98,7 @@ export default new Router({
           title: '高危人群数据查询',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/planningManagement/index',
         component: () => import('@/views/FamilyDoctor/planningManagement/Index/index'),
         name: 'planningManagement',
@@ -102,7 +106,7 @@ export default new Router({
           title: '制定随访计划管理',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/processTracking/index',
         component: () => import('@/views/FamilyDoctor/processTracking/Index/index'),
         name: 'processTracking',
@@ -110,7 +114,7 @@ export default new Router({
           title: '随访过程跟踪',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/planReminder/index',
         component: () => import('@/views/FamilyDoctor/planReminder/Index/index'),
         name: 'planReminder',
@@ -118,7 +122,7 @@ export default new Router({
           title: '随访计划提醒',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/executiveStatistics/index',
         component: () => import('@/views/FamilyDoctor/executiveStatistics/Index/index'),
         name: 'executiveStatistics',
@@ -141,7 +145,7 @@ export default new Router({
           title: '肺癌高危人群发病监测',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/factorMonitoring/index',
         component: () => import('@/views/Regulators/factorMonitoring/Index/index'),
         name: 'factorMonitoring',
@@ -149,7 +153,7 @@ export default new Router({
           title: '肺癌因素监测',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/trendStatistics/index',
         component: () => import('@/views/Regulators/trendStatistics/Index/index'),
         name: 'trendStatistics',
@@ -157,7 +161,7 @@ export default new Router({
           title: '趋势分析统计',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/indicatorDevelopment/index',
         component: () => import('@/views/Regulators/indicatorDevelopment/Index/index'),
         name: 'indicatorDevelopment',
@@ -165,7 +169,7 @@ export default new Router({
           title: '随访指标制定',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/processMonitoring/index',
         component: () => import('@/views/Regulators/processMonitoring/Index/index'),
         name: 'processMonitoring',
@@ -173,7 +177,7 @@ export default new Router({
           title: '随访过程监控',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/authorityManagement/index',
         component: () => import('@/views/Regulators/authorityManagement/Index/index'),
         name: 'authorityManagement',
@@ -181,7 +185,7 @@ export default new Router({
           title: '随访权限管理',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/assistantDecision/index',
         component: () => import('@/views/Regulators/assistantDecision/Index/index'),
         name: 'assistantDecision',
@@ -204,7 +208,7 @@ export default new Router({
           title: '肺癌高危人群发病监测',
           pageLevel: 1
         },
-      },{
+      }, {
         path: '/logQuery/index',
         component: () => import('@/views/systemManagement/logQuery/Index/index'),
         name: 'logQuery',
