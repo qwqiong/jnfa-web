@@ -4,7 +4,7 @@
       <el-menu :router="true" :default-active="defaultActive" @open="handleOpen" @close="handleClose" :collapse="isCollapse"
         class="el-menu-vertical">
         <div v-for="(item,index) in menuListIcon" :key="index">
-          <!-- 无子菜单 --> 
+          <!-- 无子菜单 -->
           <el-menu-item v-if="!item.childrens" :route="{path: item.path}" :index="item.path">
             <i :class="item.icon"></i>
             <span slot="title">{{item.name}}</span>
@@ -214,7 +214,7 @@
       left: 0;
       color: #909399;
       border: 1px solid #e6e6e6;
-      background-color: #fff;
+      background-color: #ffffff;
       cursor: pointer;
     }
   }

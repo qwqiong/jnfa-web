@@ -1,6 +1,10 @@
 <template>
   <div class="main">
     首页
+    <p></p><br/>
+    <p>
+      欢迎登陆津南区肺癌筛查管理系统
+    </p>
   </div>
 </template>
 

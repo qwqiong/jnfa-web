@@ -61,6 +61,7 @@ Vue.component(CollapseTransition.name, CollapseTransition);
 Vue.prototype.userInfo = {
 	userRole: "项目管理员",
 	userName: "张三",
+  realName: "管理员"
 } // 用户信息
 
 new Vue({

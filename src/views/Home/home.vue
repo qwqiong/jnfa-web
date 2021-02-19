@@ -14,7 +14,7 @@
               src="../../assets/img/admin.png"
               alt=""
             >
-            <span>{{ userInfo.userName }}</span>
+            <span>{{ userInfo.realName }}</span>
           </div>
 
           <el-link
@@ -61,7 +61,8 @@ export default {
       mainContentStyle: {
         height: 'calc(100vh - 56px - 34px - 12px)',
       },
-      fromPath: {}
+      fromPath: {},
+      userInfo:{}
     }
   },
   watch: {
@@ -79,7 +80,7 @@ export default {
     },
   },
   created: function () {
-    console.log('this --------->>>', this.userInfo)
+    this.userInfo = window.localStorage.getItem('user-info');
     if (this.pageName != 'main') {
       this.mainContentStyle.height = 'calc(100vh - 56px - 34px - 22px)';
     } else {
